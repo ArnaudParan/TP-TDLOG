@@ -1,0 +1,10 @@
+###Tâche 2:
+	La fonction *piksrt*
+		Cette fonction trie une liste d'éléments ordonnables.
+		Tout d'abord, on sélectionne un élément a, ensuite on déplace ceux qui le précèdent jusqu'à en trouver un <= a et on rajoute a. Donc la partie précédant a[j] est toujours triée.
+
+	La fonction *shell*
+		Le tri de Shell (source wikipedia), on réitère n = 3n + 1 jusqu'à ce que n <= longueur liste et là on trie la sous liste des liste[n * i], on divise n par 3 et on recommence et ainsi de suite jusqu'à ce que la sous liste soit la liste elle même.
+
+###Tâche 3:
+	Adopter les règles de formatage augmente la lisibilité et l'homogénéité du code. Ainsi, quand on travaille à plusieurs, on délivre un code qui se lit de manière cohérente.
