@@ -26,4 +26,4 @@ class Disk:
 
     def collision_point(self, point):
         gap = self.cent - point
-	return gap.norm() <= self.radius
+        return (gap.norm() <= self.radius)

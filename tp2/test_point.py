@@ -99,7 +99,7 @@ class point_testCase(unittest.TestCase) :
 		ineqPoint = Point(absc2, ord2)
 
 		#self.assertEqual(eqPoint1, eqPoint2)
-		self.assertTrue(eqPoint1 == eqPoint2)
+		self.assertEqual(eqPoint1, eqPoint2)
 		self.assertFalse(eqPoint1 == ineqPoint)
 
 if __name__ == "__main__" :

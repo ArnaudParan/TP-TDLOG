@@ -37,6 +37,6 @@ class Point:
     def __str__(self):
         return "({}, {})".format(self.absc, self.ord)
 
-	def __eq__(self, testedEqual):
-		print("passed")
-		return (self.absc == testedEqual.absc) and (self.ord == testedEqual.ord)
+    def __eq__(self, testedEqual):
+        print("passed")
+        return (self.absc == testedEqual.absc) and (self.ord == testedEqual.ord)
