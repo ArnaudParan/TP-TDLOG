@@ -33,3 +33,6 @@ class Disk:
 
     def __eq__(self, testedEqual):
         return (self.radius == testedEqual.radius) and (self.cent == testedEqual.cent)
+
+    def __str__(self):
+        return 'Disk({}, {})'.format(self.radius, str(self.cent))

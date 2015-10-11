@@ -16,10 +16,11 @@ class Polygon:
         perimeter = 0.
         pointsNb = len(self.points)
         for edgeId in range(pointsNb):
-            perimeter += self.edge_length(edgeId)
+            edge = self.edge(edgeId)
+            perimeter += edge.norm()
         return perimeter
 
-    def edge_length(self, edgeId):
+    def edge(self, edgeId):
         pointsNb = len(self.points)
         if edgeId > pointsNb - 1:
             raise Exception('Edge out of bounds')
@@ -30,7 +31,7 @@ class Polygon:
             nextPoint = self.points[edgeId + 1]
             currentPoint = self.points[edgeId]
         edge = nextPoint - currentPoint
-        return edge.norm()
+        return edge
 
     def translate(self, transVect):
         for point in self.points:
@@ -41,3 +42,15 @@ class Polygon:
         boxCollision = self.boundingBox.collision(collisionPoint)
         if not boxCollision:
             return False
+        #TODO do the collision inside the box
+
+    def __str__(self):
+        toString = 'Polygon('
+        nbPoints = len(self.points)
+        for pointId in range(nbPoints - 1):
+            point = self.points[pointId]
+            toString += str(point) + ', '
+        point = self.points[nbPoints - 1]
+        toString += str(point)
+        toString += ')'
+        return toString
