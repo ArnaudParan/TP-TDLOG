@@ -17,10 +17,13 @@ class point_testCase(unittest.TestCase) :
 	def test_neg(self):
 		absc = 10.
 		ord = 20.
-		testPoint = -Point(absc, ord)
+		testPoint = Point(absc, ord)
+		negPoint = - testPoint
 
-		self.assertEqual(testPoint.absc, -absc)
-		self.assertEqual(testPoint.ord, -ord)
+		self.assertEqual(negPoint.absc, -absc)
+		self.assertEqual(negPoint.ord, -ord)
+		self.assertEqual(testPoint.absc, absc)
+		self.assertEqual(testPoint.ord, ord)
 
 	def test_substract(self):
 		abscM = 10.
@@ -34,6 +37,8 @@ class point_testCase(unittest.TestCase) :
 
 		self.assertEqual(diff.absc, abscM - abscS)
 		self.assertEqual(diff.ord, ordM - ordS)
+		self.assertEqual(minuend.absc, abscM)
+		self.assertEqual(minuend.ord, ordM)
 
 	def test_iadd(self):
 		abscSummed = 10.
@@ -60,6 +65,8 @@ class point_testCase(unittest.TestCase) :
 
 		self.assertEqual(sum.absc, abscSummed + abscSummand)
 		self.assertEqual(sum.ord, ordSummed + ordSummand)
+		self.assertEqual(summed.absc, abscSummed)
+		self.assertEqual(summed.ord, ordSummed)
 
 	def test_translate(self):
 		abscTranslated = 10.

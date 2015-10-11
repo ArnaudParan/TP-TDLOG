@@ -1,19 +1,21 @@
 #!/usr/bin/python3.4
 #-*-coding:utf-8-*
 
+import copy
+
 class Point:
     def __init__(self, absc, ord):
         self.absc = absc
         self.ord = ord
 
     def __neg__(self):
-        neg = self
+        neg = copy.copy(self)
         neg.absc = -neg.absc
         neg.ord = -neg.ord
         return neg
 
     def __sub__(self, substracted):
-        diff = self
+        diff = copy.copy(self)
         diff.absc -= substracted.absc
         diff.ord -= substracted.ord
         return diff
@@ -23,7 +25,7 @@ class Point:
         return self
 
     def __add__(self, translationVectt):
-        sum = self
+        sum = copy.copy(self)
         sum.translate(translationVectt)
         return sum
 
@@ -38,5 +40,4 @@ class Point:
         return "({}, {})".format(self.absc, self.ord)
 
     def __eq__(self, testedEqual):
-        print("passed")
         return (self.absc == testedEqual.absc) and (self.ord == testedEqual.ord)
