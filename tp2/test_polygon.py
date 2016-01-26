@@ -17,12 +17,14 @@ class polygon_testCase(unittest.TestCase):
     def test_eq(self):
         eqPoly = copy.copy(self.arrowPoly)
         ieqPoly = Polygon([Point(1., 1.), Point(0., 0.)])
+
         self.assertEqual(eqPoly, self.arrowPoly)
         self.assertNotEqual(ieqPoly, self.arrowPoly)
 
     def test_perimeter(self):
         perimeter = 1.
         testPoly = Polygon([Point(0.,0.), Point(0., perimeter / 2.)])
+
         self.assertEqual(testPoly.perimeter(), perimeter)
 
     def test_translate(self):
@@ -30,6 +32,7 @@ class polygon_testCase(unittest.TestCase):
         for point in self.pointList:
             point += transVect
         translated = Polygon(self.pointList)
+
         self.assertEqual(translated, self.arrowPoly)
 
 if __name__ == "__main__" :
